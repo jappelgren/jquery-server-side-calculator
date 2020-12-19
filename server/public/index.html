@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="vendor/jquery.js"></script>
-    <script src="scripts/index.js"></script>
+    <!-- <script src="scripts/index.js"></script> -->
+    <script src="scripts/calc2.js"></script>
     <title>Server Side Calculator</title>
   </head>
   <body>
@@ -12,14 +13,13 @@
       <h1>Server Side Calculator</h1>
     </header>
     <main>
-      <input type="number" id="first-number" />
+      <input type="text" id="screen" />
       <span id="operator-container">
         <button class="operator-btn" data-btn="+" id="plus-btn">+</button>
         <button class="operator-btn" data-btn="-" id="minus-btn">-</button>
         <button class="operator-btn" data-btn="*" id="multiply-btn">&#215</button>
         <button class="operator-btn" data-btn="/" id="divide-button">&#247;</button>
       </span>
-      <input type="number" id="second-number" />
       <span id="equal-container">
           <button id="equals-btn">=</button>
           <button id="clear-btn">C</button>
