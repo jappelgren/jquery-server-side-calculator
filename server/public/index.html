@@ -6,6 +6,7 @@
     <script src="vendor/jquery.js"></script>
     <!-- <script src="scripts/index.js"></script> -->
     <script src="scripts/calc2.js"></script>
+    <link rel="stylesheet" href="style/style.css">
     <title>Server Side Calculator</title>
   </head>
   <body>
@@ -13,17 +14,44 @@
       <h1>Server Side Calculator</h1>
     </header>
     <main>
-      <input type="text" id="screen" />
-      <span id="operator-container">
-        <button class="operator-btn" data-btn="+" id="plus-btn">+</button>
-        <button class="operator-btn" data-btn="-" id="minus-btn">-</button>
-        <button class="operator-btn" data-btn="*" id="multiply-btn">&#215</button>
-        <button class="operator-btn" data-btn="/" id="divide-button">&#247;</button>
+      <span id="screen-container">
+        <input type="text" id="screen" />
+        <button id="clear-btn">C</button>
       </span>
-      <span id="equal-container">
-          <button id="equals-btn">=</button>
-          <button id="clear-btn">C</button>
-      </span>
+      <div id="keypad">
+        <div id="number-container">
+            <span>
+                <button class="number-btn" data-btn="7" id="seven-btn">7</button>
+                <button class="number-btn" data-btn="8" id="eight-btn">8</button>
+                <button class="number-btn" data-btn="9" id="nine-btn">9</button>
+            </span>
+            <br>
+            <span>
+                <button class="number-btn" data-btn="4" id="four-btn">4</button>
+                <button class="number-btn" data-btn="5" id="five-btn">5</button>
+                <button class="number-btn" data-btn="6" id="six-btn">6</button>
+            </span>
+            <br>
+            <span>
+                <button class="number-btn" data-btn="1" id="one-btn">1</button>
+                <button class="number-btn" data-btn="2" id="two-btn">2</button>
+                <button class="number-btn" data-btn="3" id="three-btn">3</button>
+            </span>
+            <br>
+            <span>
+                <button class="number-btn" data-btn="on"id="on-btn">ON/C</button>
+                <button class="number-btn" data-btn="0"id="zero-btn">0</button>
+                <button class="number-btn" data-btn="."id="decimal-btn">.</button>
+            </span>
+        </div>
+        <div id="operator-container">
+            <button class="operator-btn" data-btn="+" id="plus-btn">+</button>
+            <button class="operator-btn" data-btn="-" id="minus-btn">-</button>
+            <button class="operator-btn" data-btn="*" id="multiply-btn">&#215</button>
+            <button class="operator-btn" data-btn="/" id="divide-button">&#247;</button>
+            <button id="equals-btn">=</button>
+        </div>
+      </div>
       <div id="result-container">
           <h1 id="result-display">0</h1>
           <ul id="history-list">

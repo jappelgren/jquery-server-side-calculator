@@ -1,0 +1,12 @@
+#keypad {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+}
+
+#operator-container {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  width: 40px;
+}

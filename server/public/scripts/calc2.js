@@ -2,8 +2,9 @@ $(document).ready(handleReady);
 
 function handleReady() {
     $(document).on('click', '.operator-btn', assignOperator);
+    $(document).on('click', '.number-btn', numberInput);
     $(document).on('click', '#equals-btn', createMathObj);
-    $(document).on('click', '#clear-btn', clearInputs);
+    $(document).on('click', '#clear-btn', clearInput);
     historyUpdate()
 }
 
@@ -16,10 +17,23 @@ let operatorRe = /\+|\-|\/|\*/g;
 
 function assignOperator() {
     operatorIn = $(this).data('btn');
+
+    if (operatorRe.test($('#screen').val())) {
+        $('#screen').val($('#screen').val().replace(operatorRe, `${operatorIn}`));
+    } else {
+        $('#screen').val(function () {
+            return this.value + operatorIn;
+        })
+    }
+
+};
+
+function numberInput() {
+    operatorIn = $(this).data('btn');
     $('#screen').val(function () {
         return this.value + operatorIn;
     })
-};
+}
 
 function createMathObj() {
     let beforeOperator = $('#screen').val().match(beforeRe).toString();
@@ -33,7 +47,15 @@ function createMathObj() {
         numTwo: afterOperator
     }
     console.log(mathObj)
-    mathSubmit()
+
+    if (mathObj.numOne * 1 == mathObj.numOne && mathObj.numTwo * 1 == mathObj.numTwo) {
+        mathSubmit()
+    } else {
+        alert(`Input only accepts 2 valid numbers and one operator.  Please try again.`)
+    }
+
+
+    clearInput()
 };
 
 function mathSubmit() {
@@ -71,6 +93,6 @@ function historyUpdate() {
     })
 }
 
-function clearInputs() {
+function clearInput() {
     $('input').val('')
 }
