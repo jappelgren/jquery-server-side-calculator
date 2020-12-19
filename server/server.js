@@ -11,7 +11,7 @@ app.use(express.static('server/public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.post('/calculate', (req, res) => {
-    history.push(req.body);
+
 
     let firstInput = Number(req.body.numOne);
     let operator = req.body.operator;
@@ -26,13 +26,16 @@ app.post('/calculate', (req, res) => {
     } else if (operator == '/') {
         answer = (firstInput / secondInput).toString()
     }
-
-
+    history.push(`${firstInput} ${operator} ${secondInput} = ${answer}`); //make this a string of numone operator numtwo = answer
     res.sendStatus(200)
 })
 
 app.get('/calculate', (req, res) => {
     res.send(answer)
+})
+
+app.get('/history', (req, res) => {
+    res.send(history)
 })
 
 
