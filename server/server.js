@@ -47,7 +47,7 @@ app.post('/otherFunctions', (req, res) => {
 app.post('/memory', (req, res) => {
     let firstInput = Number(req.body.numOne);
     let operator = req.body.operator;
-    let memoryNumber = Number(memory)
+    let memoryNumber = Number(memory);
 
     if (operator == 'M+') {
         memoryNumber += firstInput
@@ -59,6 +59,9 @@ app.post('/memory', (req, res) => {
         if (firstInput == memory) {
             memory = '0'
         }
+    }
+    if (memory == 'NaN') {
+        memory = '0'
     }
     console.log(memory)
     res.sendStatus(200)

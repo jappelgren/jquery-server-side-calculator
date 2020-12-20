@@ -1,12 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-grow: 0;
+  background-color: #939597;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.calc-top-margin {
+  height: 20px;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.calc-body {
+  background-image: linear-gradient(#566fad, #566fad, #3c538d);
+  box-shadow: 5px 5px 8px rgb(53, 52, 52);
+  width: 230px;
+  height: 390px;
+  margin-top: 40px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+#screen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.screen {
+  height: 40px;
+
+  border: 4px solid rgb(201, 201, 201);
+  border-radius: 3px;
+  background-color: rgb(139, 139, 139);
+  color: rgb(66, 66, 66);
+  font-size: 16px;
+  padding-left: 3px;
+  padding-right: 3px;
+  text-align: right;
+}
+
+.screen::placeholder {
+  color: black;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 68px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 6px;
+  padding-left: 8px;
+}
+
+.logo-text {
+  display: flex;
+  vertical-align: text-top;
+}
+
+#make {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 10px;
+  color: white;
+  margin-top: 4px;
+  margin-right: 15px;
+}
+
+#model {
+  font-family: "Corben", cursive;
+  font-size: 24px;
+  color: white;
+  line-height: 25px;
+  text-shadow: 0px 0px 1px white;
+}
+
+#solar-panel {
+  background-color: #291b1c;
+  height: 30px;
+  width: 100px;
+  align-self: left;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 #keypad {
   display: flex;
   flex-direction: row;
-  width: 400px;
+  padding-left: 6px;
+  margin: 2px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+#main-keypad {
+  width: 145px;
+  padding-bottom: 5px;
+}
+
+button {
+  height: 28px;
+  width: 40px;
+  margin-top: 5px;
+  margin-right: 4px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+  outline: none;
+  color: #485c8d;
+  font-size: 18px;
+}
+
+button:active {
+  box-shadow: 0px 0px 0px;
+}
+
+#equals-btn {
+  height: 61px;
+}
+
+#clear-btn {
+  padding-top: 6px;
+  padding-bottom: 5px;
+  font-size: 12;
 }
 
 #operator-container {
   display: flex;
   flex-direction: column;
-  align-content: stretch;
-  width: 40px;
+  margin-left: 20px;
+}
+
+.memory-btn,
+.func-btn,
+.operator-btn,
+#clear-btn,
+#plus-minus,
+#equals-btn {
+  font-size: 12px;
+  background-color: #d15448;
+  color: white;
+  border-color: rgb(233, 101, 78);
+}
+
+.operator-btn,
+#equals-btn {
+  font-size: 20px;
+}
+
+#mi-logo {
+  max-height: 25px;
+  margin-left: 10px;
+  opacity: 40%;
+}
+
+#result-container {
+  display: flex;
+  flex-direction: column;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 250px;
+  margin-left: 20px;
+  list-style: none;
+  text-align: center;
+}
+
+.history-items {
+  z-index: 2;
+  background-image: url(../images/paper.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+#receipt-rip {
+  height: 50px;
+  background-image: url(../images/paper.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+
+.fade {
+  transition: 2s ease-in;
+  color: rgb(139, 139, 139);
+}
+
+.fade::placeholder {
+  transition: 2s ease-in;
+  color: rgb(139, 139, 139);
 }

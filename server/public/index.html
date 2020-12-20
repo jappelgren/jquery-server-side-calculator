@@ -4,20 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="vendor/jquery.js"></script>
-    <!-- <script src="scripts/index.js"></script> -->
-    <script src="scripts/calc2.js"></script>
+    <script src="scripts/index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="style/style.css">
     <title>Server Side Calculator</title>
   </head>
   <body>
-     
-    <header>
-      <h1>Server Side Calculator</h1>
-    </header>
     <main>
-        <div class="calc-body">
+    <div class="calc-body">
+        <div class="calc-top-margin">
+
+        </div>
       <div id="screen-container">
-        <input type="text" id="screen" />
+        <input type="text" class="screen" placeholder="0"/>
+      </div>
+      <div class="logo">
+            <div class="logo-text">
+               <div id="make">MINNESOTA INSTRUMENTS</div> <div id="model">MI-108</div>
+            </div>
+            <div id="solar-panel">
+                
+            </div>
       </div>
       <div id="keypad">
           <div id="main-keypad">
@@ -61,19 +69,24 @@
             </div>
         </div>
         <div id="operator-container">
-            <button class="operator-btn" data-btn="+" id="plus-btn">+</button>
-            <button class="operator-btn" data-btn="-" id="minus-btn">-</button>
-            <button class="operator-btn" data-btn="*" id="multiply-btn">&#215</button>
             <button class="operator-btn" data-btn="/" id="divide-button">&#247;</button>
+            <button class="operator-btn" data-btn="*" id="multiply-btn">&#215</button>
+            <button class="operator-btn" data-btn="-" id="minus-btn">-</button>
+            <button class="operator-btn" data-btn="+" id="plus-btn">+</button>
             <button id="equals-btn">=</button>
         </div>
+        
       </div>
+      <img id="mi-logo" src="./images/mi.png" alt="">
     </div>
       <div id="result-container">
-          <ul id="history-list">
-              <li></li>
-          </ul>
+          <div id="history-list">
+
+          </div>
+        <div id="receipt-rip">   
+        </div>
       </div>
+      
     </main>
   </body>
 </html>
