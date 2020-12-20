@@ -11,6 +11,7 @@ let memory = '0'
 app.use(express.static('server/public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
+//The main math is done in this function and stored in the answer  variable.  The entire equation is stored as a string in the history array. 
 app.post('/calculate', (req, res) => {
 
     let firstInput = Number(req.body.numOne);
@@ -30,6 +31,7 @@ app.post('/calculate', (req, res) => {
     res.sendStatus(200)
 })
 
+//square root and percent are crunched in this bad boy.
 app.post('/otherFunctions', (req, res) => {
     let firstInput = Number(req.body.numOne);
     let operator = req.body.operator;
@@ -44,6 +46,7 @@ app.post('/otherFunctions', (req, res) => {
     res.sendStatus(200)
 })
 
+//Memory is added to, subtracted from and reset in post.
 app.post('/memory', (req, res) => {
     let firstInput = Number(req.body.numOne);
     let operator = req.body.operator;
